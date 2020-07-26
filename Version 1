@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+   
+   printf("First,pick what shape you want each block of the pyramid to be. The shape must be a character - and cannot be a number.\n");
+   printf("Example - For # press the # key. Be creative here - the world, or rather the keyboard, is your oyster\n");
+   
+   char block = get_char ("Enter the vlaue here:");
+  
+   int height = get_int ("\n Now enter the height of the pyramid here - note that the height cannot exceed 25:   ");
+   
+   
+   
+    if (height>0 && height <25)
+   {
+        
+        for (int line =1; line < height+1; line++)
+        {
+            for (int spaces = 0; spaces < height - line; spaces ++)
+            {
+                printf(" ");
+            }
+        for (int hash =0; hash < line; hash++)
+        {
+            printf("%c",block);
+        }
+            printf("\n");
+        }
+   }
+   else 
+   {
+       printf ("C'mon man, follow the instructions here\n");
+   }
+}
